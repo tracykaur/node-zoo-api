@@ -1,0 +1,12 @@
+{
+  "name": "node-zoo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./src"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

@@ -20,4 +20,9 @@ router.get('/animals/:id', (req, res) => {
   res.json(animal)
 })
 
+router.post('/animals', (req, res) => {
+  const animal = Animal.create(req.body)
+  res.status(201).json(animal)
+})
+
 module.exports = router

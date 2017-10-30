@@ -2,6 +2,7 @@ const express = require('express')
 
 const server = express()
 
+server.use(require('body-parser').json())
 server.use('/', require('./routes'))
 
 const port = process.env.PORT || 7000

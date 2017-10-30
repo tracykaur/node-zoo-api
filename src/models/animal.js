@@ -40,4 +40,14 @@ const search = (query) => {
   })
 }
 
-module.exports = { all, find, search }
+const create = ({ name, count }) => {
+  const animal = {
+    id: items.length + 1,
+    name,
+    count: parseInt(count, 10)
+  }
+  items.push(animal)
+  return animal
+}
+
+module.exports = { all, find, search, create }

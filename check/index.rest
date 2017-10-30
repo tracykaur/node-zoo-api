@@ -7,3 +7,7 @@ GET http://localhost:7000/animals
 ###
 
 GET http://localhost:7000/animals/2
+
+###
+
+GET http://localhost:7000/animals?q=E

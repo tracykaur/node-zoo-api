@@ -33,4 +33,11 @@ const find = (id) => {
   return items[index]
 }
 
-module.exports = { all, find }
+const search = (query) => {
+  query = query.toLowerCase()
+  return items.filter(item => {
+    return item.name.toLowerCase().indexOf(query) !== -1
+  })
+}
+
+module.exports = { all, find, search }

@@ -1,3 +1,4 @@
 module.exports = [
-  require('./tickets')
+  require('./tickets'),
+  require('./animals')
 ]

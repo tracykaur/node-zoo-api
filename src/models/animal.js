@@ -16,7 +16,17 @@ let items = [
   }
 ]
 
-const all = () => items
+const all = () => items.slice().sort((a, b) => {
+  if (a.name < b.name) {
+    return -1
+  }
+  else if (a.name > b.name) {
+    return 1
+  }
+  else {
+    return 0
+  }
+})
 
 const find = (id) => {
   const index = parseInt(id, 10)

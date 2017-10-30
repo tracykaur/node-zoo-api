@@ -1,22 +1,16 @@
 const express = require('express')
+const Animal = require('../models/animal')
 
 const router = express.Router()
 
 router.get('/animals', (req, res) => {
-  res.json([
-    {
-      name: 'Gorillas',
-      count: 4
-    },
-    {
-      name: 'Zebra',
-      count: 14
-    },
-    {
-      name: 'Meercats',
-      count: 26
-    }
-  ])
+  const animals = Animal.all()
+  res.json(animals)
+})
+
+router.get('/animals/:id', (req, res) => {
+  const animal = Animal.find(req.params.id)
+  res.json(animal)
 })
 
 module.exports = router

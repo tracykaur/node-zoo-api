@@ -25,4 +25,9 @@ router.post('/animals', (req, res) => {
   res.status(201).json(animal)
 })
 
+router.patch('/animals/:id', (req, res) => {
+  const animal = Animal.findAndUpdate(req.params.id, req.body)
+  res.json(animal)
+})
+
 module.exports = router

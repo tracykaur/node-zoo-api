@@ -21,3 +21,12 @@ Content-Type: application/json
   "name": "Toucans",
   "count": "19"
 }
+
+###
+
+PATCH http://localhost:7000/animals/2
+Content-Type: application/json
+
+{
+  "count": 245
+}

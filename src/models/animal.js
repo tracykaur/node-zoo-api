@@ -50,4 +50,11 @@ const create = ({ name, count }) => {
   return animal
 }
 
-module.exports = { all, find, search, create }
+const findAndUpdate = (id, changes) => {
+  id = parseInt(id, 10) // Convert to integer
+  const item = items.find(item => item.id === id)
+  Object.assign(item, changes)
+  return item
+}
+
+module.exports = { all, find, search, create, findAndUpdate }

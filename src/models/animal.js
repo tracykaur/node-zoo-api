@@ -57,4 +57,16 @@ const findAndUpdate = (id, changes) => {
   return item
 }
 
-module.exports = { all, find, search, create, findAndUpdate }
+const destroy = (id) => {
+  id = parseInt(id, 10) // Convert to integer
+  const indexToRemove = items.findIndex(item => item.id === id)
+  const removedItems = items.splice(indexToRemove, 1)
+  if (removedItems.length > 0) {
+    return removedItems[0] // Return removed item
+  }
+  else {
+    return
+  }
+}
+
+module.exports = { all, find, search, create, findAndUpdate, destroy }

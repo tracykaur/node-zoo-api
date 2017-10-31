@@ -30,4 +30,9 @@ router.patch('/animals/:id', (req, res) => {
   res.json(animal)
 })
 
+router.delete('/animals/:id', (req, res) => {
+  const animal = Animal.destroy(req.params.id)
+  res.json(animal)
+})
+
 module.exports = router

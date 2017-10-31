@@ -30,3 +30,7 @@ Content-Type: application/json
 {
   "count": 245
 }
+
+###
+
+DELETE http://localhost:7000/animals/2

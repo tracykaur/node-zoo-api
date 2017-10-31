@@ -29,8 +29,8 @@ const all = () => items.slice().sort((a, b) => {
 })
 
 const find = (id) => {
-  const index = parseInt(id, 10)
-  return items[index]
+  id = parseInt(id, 10) // Convert to integer
+  return items.find(item => item.id === id)
 }
 
 const search = (query) => {

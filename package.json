@@ -1,5 +1,5 @@
 {
-  "name": "node-zoo",
+  "name": "node-zoo-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

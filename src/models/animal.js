@@ -64,7 +64,7 @@ const destroy = (id) => {
     // Not found
     return
   }
-  const removedItems = items.splice(indexToRemove, 1)
+  const removedItems = items.splice(indexToRemove, 1) // Remove the item at that index
   return removedItems[0] // Return removed item
 }
 

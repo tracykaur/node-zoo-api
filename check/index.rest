@@ -1,20 +1,24 @@
-GET http://localhost:7000/tickets
+@baseURL = {{baseURL}}
+@baseURL = https://3lretag3s6.execute-api.us-west-2.amazonaws.com/development
+
+###
+GET {{baseURL}}/tickets
 
 ###
 
-GET http://localhost:7000/animals
+GET {{baseURL}}/animals
 
 ###
 
-GET http://localhost:7000/animals/2
+GET {{baseURL}}/animals/2
 
 ###
 
-GET http://localhost:7000/animals?q=E
+GET {{baseURL}}/animals?q=E
 
 ###
 
-POST http://localhost:7000/animals
+POST {{baseURL}}/animals
 Content-Type: application/json
 
 {
@@ -24,7 +28,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:7000/animals/2
+PATCH {{baseURL}}/animals/2
 Content-Type: application/json
 
 {
@@ -33,4 +37,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:7000/animals/2
+DELETE {{baseURL}}/animals/2

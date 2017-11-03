@@ -3,6 +3,14 @@ const Animal = require('../models/animal')
 
 const router = express.Router()
 
+function validatePresent(animal) {
+  if (animal == null) {
+    const error = new Error('Animal not found') // Error with message
+    error.status = 404 // Store status for res.status() to use
+    throw error
+  }
+}
+
 router.get('/animals', (req, res) => {
   const query = req.query.q || ''
   let animals
@@ -17,6 +25,7 @@ router.get('/animals', (req, res) => {
 
 router.get('/animals/:id', (req, res) => {
   const animal = Animal.find(req.params.id)
+  validatePresent(animal)
   res.json(animal)
 })
 
@@ -27,11 +36,13 @@ router.post('/animals', (req, res) => {
 
 router.patch('/animals/:id', (req, res) => {
   const animal = Animal.findAndUpdate(req.params.id, req.body)
+  validatePresent(animal)
   res.json(animal)
 })
 
 router.delete('/animals/:id', (req, res) => {
   const animal = Animal.destroy(req.params.id)
+  validatePresent(animal)
   res.json(animal)
 })
 

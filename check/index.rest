@@ -1,5 +1,5 @@
-@baseURL = {{baseURL}}
-@baseURL = https://3lretag3s6.execute-api.us-west-2.amazonaws.com/development
+@baseURL = http://localhost:7000
+#@baseURL = https://3lretag3s6.execute-api.us-west-2.amazonaws.com/development
 
 ###
 GET {{baseURL}}/tickets
@@ -11,6 +11,10 @@ GET {{baseURL}}/animals
 ###
 
 GET {{baseURL}}/animals/2
+
+###
+
+GET {{baseURL}}/animals/8
 
 ###
 

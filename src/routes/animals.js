@@ -11,6 +11,7 @@ function validateFound(animal) {
   }
 }
 
+// Read all
 router.get('/animals', (req, res) => {
   const query = req.query.q || ''
   let animals
@@ -23,23 +24,27 @@ router.get('/animals', (req, res) => {
   res.json(animals)
 })
 
+// Read single
 router.get('/animals/:id', (req, res) => {
   const animal = Animal.find(req.params.id)
   validateFound(animal)
   res.json(animal)
 })
 
+// Create
 router.post('/animals', (req, res) => {
   const animal = Animal.create(req.body)
   res.status(201).json(animal)
 })
 
+// Update
 router.patch('/animals/:id', (req, res) => {
   const animal = Animal.findAndUpdate(req.params.id, req.body)
   validateFound(animal)
   res.json(animal)
 })
 
+// Destroy
 router.delete('/animals/:id', (req, res) => {
   const animal = Animal.destroy(req.params.id)
   validateFound(animal)

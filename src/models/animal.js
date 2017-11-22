@@ -16,17 +16,19 @@ let items = [
   }
 ]
 
-const all = () => items.slice().sort((a, b) => {
-  if (a.name < b.name) {
-    return -1
-  }
-  else if (a.name > b.name) {
-    return 1
-  }
-  else {
-    return 0
-  }
-})
+const all = () => items
+  .slice() // Create a copy
+  .sort((a, b) => { // Sort the copy by name
+    if (a.name < b.name) {
+      return -1
+    }
+    else if (a.name > b.name) {
+      return 1
+    }
+    else {
+      return 0
+    }
+  })
 
 const find = (id) => {
   id = parseInt(id, 10) // Convert to integer

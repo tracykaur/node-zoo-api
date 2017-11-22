@@ -2,12 +2,14 @@ const express = require('express')
 
 const server = express()
 
+// Add JSON plugin which allows JSON as the body in POST/PATCH/PUT requests
 server.use(require('body-parser').json())
 server.use('/', require('./routes'))
 
-// Handles any thrown errors
-// Outputs as json with key `errors`
+// Handles any errors thrown by a route
+// Outputs json with key `errors`
 server.use((error, req, res, next) => {
+  // Use status code if provided by the error, or fallback to 500 Internal server error
   res.status(error.status || 500)
   res.json({ errors: [error.message] })
 })

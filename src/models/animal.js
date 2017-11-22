@@ -13,7 +13,19 @@ let items = [
     id: 3,
     name: 'Meercats',
     count: 26
-  }
+  },
+  {
+    id: 4,
+    name: 'Lions',
+    count: 3
+  },
+  {
+    id: 5,
+    name: 'Sharks',
+    count: 5,
+    isSeaAnimal: true,
+  },
+
 ]
 
 const all = () => items
@@ -41,6 +53,10 @@ const search = (query) => {
     return item.name.toLowerCase().indexOf(query) !== -1
   })
 }
+
+const onlySeaAnimal = () => {
+  return items.filter(item => item.isSeaAnimal);
+};
 
 const create = ({ name, count }) => {
   const animal = {
@@ -70,4 +86,4 @@ const destroy = (id) => {
   return removedItems[0] // Return removed item
 }
 
-module.exports = { all, find, search, create, findAndUpdate, destroy }
+module.exports = { all, find, search, create, findAndUpdate, destroy, onlySeaAnimal }

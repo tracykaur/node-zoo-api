@@ -51,4 +51,8 @@ router.delete('/animals/:id', (req, res) => {
   res.json(animal)
 })
 
+router.get('/sea-animals', (req, res) => {
+  res.status(200).json(Animal.onlySeaAnimal());
+});
+
 module.exports = router
